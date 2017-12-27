@@ -15,7 +15,10 @@ import java.util.List;
  */
 public class FileReader {
  private String fileName;
-    public FileReader (String fileName){
+ 
+ public  double  counter =0 ;
+    
+ public FileReader (String fileName){
         this.fileName = fileName;
     }
      public  List<DataSet> readCsvFile(){
@@ -49,6 +52,8 @@ public class FileReader {
                           employeeDetails[3],employeeDetails[4],employeeDetails[5]);
                     empList.add(emp);
                 }
+                
+                counter ++ ;
             }
 
         }
