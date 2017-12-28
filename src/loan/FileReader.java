@@ -16,7 +16,7 @@ import java.util.List;
 public class FileReader {
  private String fileName;
  
- public  double  counter =0 ;
+ public  double  counter =1 ;
     
  public FileReader (String fileName){
         this.fileName = fileName;
@@ -25,15 +25,14 @@ public class FileReader {
         //Delimiters used in the CSV file
      String COMMA_DELIMITER = ",";
      int count = 0 ;
-         List<DataSet> empList = new ArrayList<DataSet>();
+         List<DataSet> data = new ArrayList<DataSet>();
         BufferedReader br = null;
         try
         {
             //Reading the csv file
             br = new BufferedReader(new java.io.FileReader(this.fileName));
             
-            //Create List for holding Employee objects
-      
+       
             
             String line = "";
             //Read to skip the header
@@ -42,15 +41,15 @@ public class FileReader {
                    
             while ((line = br.readLine()) != null) 
             {
-                String[] employeeDetails = line.split(COMMA_DELIMITER);
+                String[] dataSet = line.split(COMMA_DELIMITER);
                 
-                if(employeeDetails.length > 0 )
+                if(dataSet.length > 0 )
                 {
-                    //Save the employee details in Employee object
-                    DataSet emp = new DataSet(Integer.parseInt(employeeDetails[0]),
-                            employeeDetails[1],employeeDetails[2],
-                          employeeDetails[3],employeeDetails[4],employeeDetails[5]);
-                    empList.add(emp);
+                    //Save the  dataSet  in  object
+                    DataSet emp = new DataSet(Integer.parseInt(dataSet[0]),
+                            dataSet[1],dataSet[2],
+                          dataSet[3],dataSet[4],dataSet[5]);
+                    data.add(emp);
                 }
                 
                 counter ++ ;
@@ -62,7 +61,7 @@ public class FileReader {
             ee.printStackTrace();
         }
    
- return empList;
+ return data;
     }
     
 }

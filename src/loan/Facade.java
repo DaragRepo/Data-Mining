@@ -18,10 +18,10 @@ public class Facade {
    private List<SeperateFeatures> l;
    private Features f; 
    private   Attributes atrr;
-   public  double counter ;
+   public  double counter ;// yes , whatever 
     public Facade (String yes_or_no,String feature_name){
 
-        FileReader file = new FileReader("C:\\Users\\moh\\Desktop\\pic\\bank-full.csv");
+        FileReader file = new FileReader("C:\\Users\\max22\\Desktop\\bank-full.csv");
 
         
 

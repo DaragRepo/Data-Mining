@@ -25,7 +25,13 @@ public class Classifier {
        
       // System.out.print(FetHashMap);
        
-       double value = FetHashMap.get(Element);
+        double value ;
+        try {
+             value = FetHashMap.get(Element);
+        } catch (Exception e) {
+            value = 1;
+        }
+      // double value = FetHashMap.get(Element);
        
         
         return value;
@@ -38,8 +44,13 @@ public class Classifier {
        
       // System.out.print(FetHashMap);
        
-       double value = FetHashMap.get(Element);
-       
+      // double value = FetHashMap.get(Element);
+        double value ;
+        try {
+             value = FetHashMap.get(Element);
+        } catch (Exception e) {
+            value = 1;
+        }
         
         return value;
     }
@@ -47,7 +58,7 @@ public class Classifier {
     public double Naive_Biase_Classifier(double Feature1,double Feature2,double Feature3,double Feature4,double Feature5,double classLable ){
      
         
-        return Feature1*Feature2*Feature3*Feature4*Feature5*classLable;
+        return (Feature1*Feature2*Feature3*Feature4*Feature5*classLable);
         
     } 
     

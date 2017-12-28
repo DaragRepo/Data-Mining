@@ -20,7 +20,7 @@ import javax.swing.JPanel;
  */
 public class Gui extends JFrame  {
       private JComboBox jobCombo; 
-  private String [] job= {"management","admin","self-employed","student","housemaid","retired" ,"technician", "services", "blue-collar", "unemployed", "entrepreneur", "unknown"};
+  private String [] job= {"management","admin.","self-employed","student","housemaid","retired" ,"technician", "services", "blue-collar", "unemployed", "entrepreneur", "unknown"};
   private String [] marital = {"single", "married", "divorced"};
     private String [] education = {"secondary", "tertiary", "primary", "unknown"};
     private String [] housing ={"no", "yes"};
@@ -71,7 +71,52 @@ btn.addActionListener(new ActionListener() {
                 housingSelected = (String) housingCombo.getSelectedItem();
               educationSelected = (String) educationCombo.getSelectedItem();
               maritalSelected = (String) maritalCombo.getSelectedItem();
+              
+    FeatureProbability f = new FeatureProbability();
+    Classifier c = new Classifier();
+    
+    double ageyes,ageno,jobyes,jobno,maritalyes,maritalno,educationyes,educationno,housingyes,housingno,loanyes,loanno ;
+    
+     jobyes = c.Fetch_probablty_with_Yes("job",jobSelected );
+    jobno = c.Fetch_probablty_with_No("job",jobSelected);
+   
+    maritalyes = c.Fetch_probablty_with_Yes("marital", maritalSelected);
+    maritalno = c.Fetch_probablty_with_No("marital", maritalSelected);
+     
+    educationyes = c.Fetch_probablty_with_Yes("education", educationSelected);
+    educationno = c.Fetch_probablty_with_No("education", educationSelected);
+     
+    housingyes = c.Fetch_probablty_with_Yes("housing", housingSelected);
+    housingno = c.Fetch_probablty_with_Yes("housing", housingSelected);
+    
+    loanyes = f.probabilityOfYes();
+    loanno = f.probabilityOfNO();
+     
+     
+     double decision_yes = c.Naive_Biase_Classifier(1,jobyes , maritalyes, educationyes, housingyes, loanyes);
+     double decision_no = c.Naive_Biase_Classifier(1,jobno , maritalno, educationno, housingno, loanno);
+     
+     
+     String outcome = c.predict(decision_yes, decision_no);
+     
+    
+    
+    
+      
+     label.setText(outcome);
+    System.out.println( " yes = " +decision_yes +" no = "+ decision_no  +" lable ="+ outcome );
 
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
            
             }
         });
@@ -96,9 +141,9 @@ btn.addActionListener(new ActionListener() {
     public String getEducationSelected() {
         return educationSelected;
     }
-    public void setOutCome(String decision){
-        this.decision = decision;
-        this.label.setText(decision);
-    }
+//    public void setOutCome(String decision){
+//        this.decision = decision;
+//        this.label.setText(decision);
+//    }
     
 }
