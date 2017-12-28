@@ -3,9 +3,21 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+<<<<<<< Updated upstream
             <file>file:/C:/Users/max22/Desktop/Loan/src/loan/FeatureProbability.java</file>
             <file>file:/C:/Users/max22/Desktop/Loan/src/loan/Loan.java</file>
             <file>file:/C:/Users/max22/Desktop/Loan/src/loan/Classifier.java</file>
+=======
+            <file>file:/C:/Users/moh/Documents/NetBeansProjects/Loan/src/loan/Facade.java</file>
+            <file>file:/C:/Users/moh/Documents/NetBeansProjects/Loan/src/loan/Attributes.java</file>
+            <file>file:/C:/Users/moh/Documents/NetBeansProjects/Loan/src/loan/Classifier.java</file>
+            <file>file:/C:/Users/moh/Documents/NetBeansProjects/Loan/src/loan/Loan.java</file>
+            <file>file:/C:/Users/moh/Documents/NetBeansProjects/Loan/src/loan/Features.java</file>
+            <file>file:/C:/Users/moh/Documents/NetBeansProjects/Loan/src/loan/FeatureProbability.java</file>
+            <file>file:/C:/Users/moh/Documents/NetBeansProjects/Loan/src/loan/FileReader.java</file>
+            <file>file:/C:/Users/moh/Documents/NetBeansProjects/Loan/src/loan/SeperateFeatures.java</file>
+            <file>file:/C:/Users/moh/Documents/NetBeansProjects/Loan/src/loan/DataSet.java</file>
+>>>>>>> Stashed changes
         </group>
     </open-files>
 </project-private>

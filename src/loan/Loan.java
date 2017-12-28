@@ -5,6 +5,8 @@
  */
 package loan;
 
+import static java.lang.Thread.sleep;
+
 
 /**
  *
@@ -14,31 +16,38 @@ public class Loan {
    
 
 
-    public static void main(String[] args){
+    public static void main(String[] args) throws InterruptedException{
+
 //    Facade f =new Facade("no","age"); 
 //        System.out.println(f.getYesOrNo()); // i gave it yes so it will return all the age with yes 
 //              System.out.println(f.countAllYes()); // this is to count all the yes in the data set 
 //                
 //        
 //                
+
+//Facade f =new Facade("no","age"); 
+//        System.out.println(f.getYesOrNo()); // i gave it yes so it will return all the age with yes 
+//                System.out.println(f.countAllYes()); // this is to count all the yes in the data set 
+
 // my main 
     FeatureProbability f = new FeatureProbability();
     Classifier c = new Classifier();
     
     double ageyes,ageno,jobyes,jobno,maritalyes,maritalno,educationyes,educationno,housingyes,housingno,loanyes,loanno ;
    // ageyes = c.Fetch_probablty_with_Yes(, null);
-    
-    jobyes = c.Fetch_probablty_with_Yes("job","management" );
-    jobno = c.Fetch_probablty_with_No("job", "management");
+Gui g  =new Gui();    
+sleep(20000);
+    jobyes = c.Fetch_probablty_with_Yes("job",g.getJobSelected() );
+    jobno = c.Fetch_probablty_with_No("job",g.getJobSelected());
    
-    maritalyes = c.Fetch_probablty_with_Yes("marital", "married");
-    maritalno = c.Fetch_probablty_with_No("marital", "married");
+    maritalyes = c.Fetch_probablty_with_Yes("marital", g.getMaritalSelected());
+    maritalno = c.Fetch_probablty_with_No("marital", g.getMaritalSelected());
      
-    educationyes = c.Fetch_probablty_with_Yes("education", "tertiary");
-    educationno = c.Fetch_probablty_with_No("education", "tertiary");
+    educationyes = c.Fetch_probablty_with_Yes("education", g.getEducationSelected());
+    educationno = c.Fetch_probablty_with_No("education", g.getEducationSelected());
      
-    housingyes = c.Fetch_probablty_with_Yes("housing", "yes");
-    housingno = c.Fetch_probablty_with_Yes("housing", "yes");
+    housingyes = c.Fetch_probablty_with_Yes("housing", g.getHousingSelected());
+    housingno = c.Fetch_probablty_with_Yes("housing", g.getHousingSelected());
     
     loanyes = f.probabilityOfYes();
     loanno = f.probabilityOfNO();
@@ -50,7 +59,7 @@ public class Loan {
      
      String outcome = c.predict(decision_yes, decision_no);
      
-    
+    g.setOutCome(outcome);
     System.out.println( " yes = " +decision_yes +" no = "+ decision_no  +" lable ="+ outcome );
     
     

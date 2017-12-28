@@ -20,7 +20,11 @@ public class Facade {
    private   Attributes atrr;
    public  double counter ;
     public Facade (String yes_or_no,String feature_name){
-        FileReader file = new FileReader("C:\\Users\\max22\\Desktop\\bank-full.csv");
+
+        FileReader file = new FileReader("C:\\Users\\moh\\Desktop\\pic\\bank-full.csv");
+
+        
+
         
      this.list =   file.readCsvFile();
         this.f =new Features(this.list, feature_name);
@@ -38,10 +42,12 @@ public class Facade {
         return this.f.countAllNo();
     }
     
+
     public  double returncounter (){
         
      return counter;
     }
     
+
     
 }
